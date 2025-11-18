@@ -90,12 +90,12 @@ export const HeroSection = () => {
           </div>
 
           {/* Right Image */}
-          <div className="relative lg:h-[600px] animate-fade-in">
-            <div className="absolute inset-0 bg-gradient-primary opacity-20 rounded-3xl blur-2xl" />
+          <div className="relative lg:h-[600px] animate-fade-in group">
+            <div className="absolute inset-0 bg-gradient-primary opacity-20 rounded-3xl blur-2xl group-hover:opacity-30 transition-smooth" />
             <img
               src="https://images.unsplash.com/photo-1622675363311-3e1904dc1885?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwxfHxkaXZlcnNlJTIwdGVhbXxlbnwwfHx8fDE3NjM0NzE4NjZ8MA&ixlib=rb-4.1.0&q=85"
               alt="Diverse team collaboration"
-              className="relative rounded-3xl shadow-elegant object-cover w-full h-full"
+              className="relative rounded-3xl shadow-elegant object-cover w-full h-full transform group-hover:scale-105 transition-all duration-500"
             />
           </div>
         </div>
