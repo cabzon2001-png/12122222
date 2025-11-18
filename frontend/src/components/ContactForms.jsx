@@ -87,17 +87,17 @@ export const ContactForms = () => {
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in">
           <div className="inline-block bg-accent px-4 py-2 rounded-full mb-4">
             <span className="text-sm font-medium text-accent-foreground uppercase tracking-wide">
-              Contact Us
+              {t.badge}
             </span>
           </div>
           <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4">
-            Get Started Today
+            {t.title}
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Whether you're an employer looking for talent or a candidate seeking opportunities, we're here to help
+            {t.subtitle}
           </p>
         </div>
 
