@@ -60,7 +60,7 @@ export const ClientsPartnersSection = () => {
       x: 67, 
       y: 52,
       workers: '400+',
-      industries: language === 'en' ? 'Services, Healthcare' : 'Послуги, Охорона здоров'я'
+      industries: language === 'en' ? 'Services, Healthcare' : 'Послуги, Охорона здоров\\'я'
     },
     { 
       name: language === 'en' ? 'Philippines' : 'Філіппіни', 
