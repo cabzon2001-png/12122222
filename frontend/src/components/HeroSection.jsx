@@ -36,55 +36,54 @@ export const HeroSection = () => {
             </div>
 
             <h1 className="font-heading font-bold text-5xl sm:text-6xl lg:text-7xl leading-tight text-foreground">
-              Connect with
+              {t.title1}
               <span className="block bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Global Talent
+                {t.title2}
               </span>
-              from Asia
+              {t.title3}
             </h1>
 
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl">
-              ProfiWay brings together European companies with reliable, verified workers from Asia.
-              We specialize in legal employment opportunities with a focus on trust, professionalism, and transparency.
+              {t.description}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
                 onClick={() => scrollToSection('contact')}
-                className="bg-gradient-primary text-primary-foreground hover:opacity-90 transition-smooth text-lg px-8 shadow-elegant group"
+                className="bg-gradient-primary text-primary-foreground hover:opacity-90 hover:scale-105 transition-all duration-300 text-lg px-8 shadow-elegant group"
               >
-                Request Employees
+                {t.requestEmployees}
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-smooth" />
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 onClick={() => scrollToSection('about')}
-                className="text-lg px-8 border-2 hover:bg-accent"
+                className="text-lg px-8 border-2 hover:bg-accent hover:scale-105 transition-all duration-300"
               >
-                Learn More
+                {t.learnMore}
               </Button>
             </div>
 
             {/* Quick Stats */}
             <div className="flex flex-wrap gap-8 pt-4">
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+              <div className="flex items-center space-x-3 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-smooth">
                   <Users className="w-6 h-6 text-primary" />
                 </div>
                 <div>
                   <div className="font-bold text-2xl text-foreground">5000+</div>
-                  <div className="text-sm text-muted-foreground">Workers Placed</div>
+                  <div className="text-sm text-muted-foreground">{t.workersPlaced}</div>
                 </div>
               </div>
-              <div className="flex items-center space-x-3">
-                <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
+              <div className="flex items-center space-x-3 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
+                <div className="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center group-hover:scale-110 transition-smooth">
                   <Globe className="w-6 h-6 text-secondary" />
                 </div>
                 <div>
                   <div className="font-bold text-2xl text-foreground">15+</div>
-                  <div className="text-sm text-muted-foreground">Countries</div>
+                  <div className="text-sm text-muted-foreground">{t.countries}</div>
                 </div>
               </div>
             </div>
