@@ -16,9 +16,10 @@ export const TestimonialsSection = () => {
       company: language === 'en' ? 'Germany' : 'Німеччина',
       content: language === 'en' 
         ? 'ProfiWay helped us find 50 qualified workers from India within just 3 months. Their professionalism and dedication exceeded our expectations. The workers are highly skilled and committed.'
-        : 'ProfiWay допомогли нам знайти 50 кваліфікованих працівників з Індії всього за 3 місяці. Їхній професіоналізм та відданість перевершили наші очікування. Працівники високо кваліфіковані та відповідальні.',
+        : 'ProfiWay допомогли нам знайти 50 кваліфікованих працівників з Індії всього за 3 місяці. Їхній професіоналізм та відданість перевершили наші очікування. Працівники висококваліфіковані та відповідальні.',
       rating: 5,
       avatar: 'MS',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=faces',
     },
     {
       name: 'Anna Kowalska',
@@ -29,6 +30,7 @@ export const TestimonialsSection = () => {
         : 'Робота з ProfiWay стала переломним моментом для наших будівельних проектів. Якість кандидатів та плавний процес зробили міжнародний найм безстресовим.',
       rating: 5,
       avatar: 'AK',
+      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=faces',
     },
     {
       name: 'Jan Novak',
@@ -39,6 +41,7 @@ export const TestimonialsSection = () => {
         : 'Відмінний сервіс від початку до кінця. Працівники з Бангладеш були неймовірно надійними та працьовитими. ProfiWay професійно впоралися з усією документацією.',
       rating: 5,
       avatar: 'JN',
+      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=faces',
     },
   ];
 
@@ -63,7 +66,7 @@ export const TestimonialsSection = () => {
           {testimonials.map((testimonial, index) => (
             <Card
               key={index}
-              className="hover:shadow-elegant hover:scale-105 transition-all duration-300 border-border bg-card animate-fade-in-up"
+              className="hover:shadow-elegant hover:scale-105 transition-all duration-300 border-border bg-card animate-fade-in-up overflow-hidden"
               style={{animationDelay: `${index * 0.15}s`}}
             >
               <CardContent className="p-6 space-y-4">
@@ -76,23 +79,26 @@ export const TestimonialsSection = () => {
                   </div>
                 </div>
 
-                <p className="text-muted-foreground leading-relaxed italic">
+                <p className="text-muted-foreground leading-relaxed italic min-h-[120px]">
                   "{testimonial.content}"
                 </p>
 
                 <div className="flex items-center space-x-4 pt-4 border-t border-border">
-                  <Avatar className="w-12 h-12">
-                    <AvatarImage src="" alt={testimonial.name} />
-                    <AvatarFallback className="bg-gradient-primary text-primary-foreground font-semibold">
+                  <Avatar className="w-14 h-14 ring-2 ring-primary/20">
+                    <AvatarImage src={testimonial.image} alt={testimonial.name} />
+                    <AvatarFallback className="bg-gradient-primary text-primary-foreground font-semibold text-lg">
                       {testimonial.avatar}
                     </AvatarFallback>
                   </Avatar>
                   <div>
-                    <div className="font-semibold text-foreground">{testimonial.name}</div>
+                    <div className="font-semibold text-foreground text-lg">{testimonial.name}</div>
                     <div className="text-sm text-muted-foreground">
                       {testimonial.role}
                     </div>
-                    <div className="text-xs text-muted-foreground">{testimonial.company}</div>
+                    <div className="text-xs text-muted-foreground flex items-center">
+                      <span className="mr-1">📍</span>
+                      {testimonial.company}
+                    </div>
                   </div>
                 </div>
               </CardContent>
