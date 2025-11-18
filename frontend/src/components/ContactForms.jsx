@@ -249,18 +249,18 @@ export const ContactForms = () => {
           </Card>
 
           {/* Candidate Form */}
-          <Card className="border-border shadow-elegant">
+          <Card className="border-border shadow-elegant animate-fade-in-up" style={{animationDelay: '0.2s'}}>
             <CardHeader>
               <div className="flex items-center space-x-3 mb-2">
                 <div className="w-12 h-12 bg-secondary/10 rounded-xl flex items-center justify-center">
                   <User className="w-6 h-6 text-secondary" />
                 </div>
                 <CardTitle className="text-2xl font-heading font-bold text-foreground">
-                  For Candidates
+                  {t.forCandidates}
                 </CardTitle>
               </div>
               <CardDescription className="text-muted-foreground">
-                Apply now for legal employment opportunities in Europe
+                {t.candidateSubtitle}
               </CardDescription>
             </CardHeader>
             <CardContent>
