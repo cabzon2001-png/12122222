@@ -61,7 +61,7 @@ export const Footer = () => {
 
           {/* Services */}
           <div className="space-y-4">
-            <h3 className="font-heading font-semibold text-lg text-foreground">Our Services</h3>
+            <h3 className="font-heading font-semibold text-lg text-foreground">{t.ourServices}</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>International Recruitment</li>
               <li>Visa Processing</li>
