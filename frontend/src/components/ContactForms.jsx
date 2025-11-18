@@ -103,18 +103,18 @@ export const ContactForms = () => {
 
         <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
           {/* Employer Form */}
-          <Card className="border-border shadow-elegant">
+          <Card className="border-border shadow-elegant animate-fade-in-up" style={{animationDelay: '0.1s'}}>
             <CardHeader>
               <div className="flex items-center space-x-3 mb-2">
                 <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center">
                   <Building2 className="w-6 h-6 text-primary" />
                 </div>
                 <CardTitle className="text-2xl font-heading font-bold text-foreground">
-                  For Employers
+                  {t.forEmployers}
                 </CardTitle>
               </div>
               <CardDescription className="text-muted-foreground">
-                Submit your requirements and we'll find the perfect candidates for your company
+                {t.employerSubtitle}
               </CardDescription>
             </CardHeader>
             <CardContent>
