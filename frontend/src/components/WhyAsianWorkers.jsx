@@ -1,8 +1,12 @@
 import React from 'react';
 import { Card } from '@/components/ui/card';
 import { CheckCircle2 } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { translations } from '@/translations/translations';
 
 export const WhyAsianWorkers = () => {
+  const { language } = useLanguage();
+  const t = translations[language].whyAsian;
   const benefits = [
     'High work culture based on professionalism and perfectionism',
     'Hardworking, loyal, and reliable workforce',
