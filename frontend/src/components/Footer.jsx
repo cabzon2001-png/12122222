@@ -111,7 +111,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-sm text-muted-foreground">
-            © {new Date().getFullYear()} ProfiWay Recruiting LLC. All rights reserved.
+            © {new Date().getFullYear()} ProfiWay Recruiting LLC. {t.allRights}.
           </div>
           <div className="flex space-x-6">
             <button className="text-sm text-muted-foreground hover:text-primary transition-smooth">
