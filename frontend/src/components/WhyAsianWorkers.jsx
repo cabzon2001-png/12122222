@@ -37,20 +37,19 @@ export const WhyAsianWorkers = () => {
           </div>
 
           {/* Right Content */}
-          <div className="space-y-6">
+          <div className="space-y-6 animate-fade-in" style={{animationDelay: '0.2s'}}>
             <div className="inline-block bg-accent px-4 py-2 rounded-full">
               <span className="text-sm font-medium text-accent-foreground uppercase tracking-wide">
-                Why Asian Workers?
+                {t.badge}
               </span>
             </div>
             
             <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground">
-              Exceptional Workforce from Asia
+              {t.title}
             </h2>
             
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Workers from South and Central Asia are well-prepared for physical labor and distinguished by high dedication. 
-              Their employment contributes to business stability, especially in manufacturing and processing industries.
+              {t.description}
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
