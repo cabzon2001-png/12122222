@@ -111,7 +111,7 @@ export const ClientsPartnersSection = () => {
                 <defs>
                   <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                     <stop offset="0%" style={{stopColor: 'hsl(var(--primary))', stopOpacity: 0.1}} />
-                    <stop offset="100%" style={{stopColor: 'hsl(var(--secondary))', stop Opacity: 0.1}} />
+                    <stop offset="100%" style={{stopColor: 'hsl(var(--secondary))', stopOpacity: 0.1}} />
                   </linearGradient>
                 </defs>
                 
