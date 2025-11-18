@@ -2,8 +2,13 @@ import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Check } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { translations } from '@/translations/translations';
 
 export const PricingSection = () => {
+  const { language } = useLanguage();
+  const t = translations[language].pricing;
+
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -13,43 +18,63 @@ export const PricingSection = () => {
 
   const plans = [
     {
-      name: 'Standard',
-      description: 'For small to medium businesses',
-      price: 'Custom',
-      features: [
+      name: language === 'en' ? 'Standard' : 'Стандарт',
+      description: language === 'en' ? 'For small to medium businesses' : 'Для малого та середнього бізнесу',
+      price: t.custom,
+      features: language === 'en' ? [
         'Candidate search and selection',
         'Document verification',
         'Visa process organization',
         'Basic support',
         'Up to 20 workers',
+      ] : [
+        'Пошук та відбір кандидатів',
+        'Перевірка документів',
+        'Організація візового процесу',
+        'Базова підтримка',
+        'До 20 працівників',
       ],
       highlighted: false,
     },
     {
-      name: 'Premium',
-      description: 'For growing companies',
-      price: 'Custom',
-      features: [
+      name: language === 'en' ? 'Premium' : 'Преміум',
+      description: language === 'en' ? 'For growing companies' : 'Для компаній, що розвиваються',
+      price: t.custom,
+      features: language === 'en' ? [
         'Everything in Standard',
         'Testing and video interviews',
         'Full legal support',
         'Arrival coordination',
         'Adaptation support',
         'Up to 50 workers',
+      ] : [
+        'Все зі Стандарту',
+        'Тестування та відео-співбесіди',
+        'Повна юридична підтримка',
+        'Координація прибуття',
+        'Підтримка адаптації',
+        'До 50 працівників',
       ],
       highlighted: true,
     },
     {
-      name: 'Enterprise',
-      description: 'For large-scale recruitment',
-      price: 'Custom',
-      features: [
+      name: language === 'en' ? 'Enterprise' : 'Корпоративний',
+      description: language === 'en' ? 'For large-scale recruitment' : 'Для масштабного найму',
+      price: t.custom,
+      features: language === 'en' ? [
         'Everything in Premium',
         'Dedicated account manager',
         'Priority candidate selection',
         'Special payment terms',
         'Unlimited workers',
         '24/7 support',
+      ] : [
+        'Все з Преміум',
+        'Персональний менеджер',
+        'Пріоритетний відбір кандидатів',
+        'Спеціальні умови оплати',
+        'Необмежена кількість працівників',
+        'Підтримка 24/7',
       ],
       highlighted: false,
     },
@@ -58,17 +83,17 @@ export const PricingSection = () => {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in">
           <div className="inline-block bg-accent px-4 py-2 rounded-full mb-4">
             <span className="text-sm font-medium text-accent-foreground uppercase tracking-wide">
-              Pricing
+              {t.badge}
             </span>
           </div>
           <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4">
-            Flexible Pricing Plans
+            {t.title}
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Choose a plan that fits your recruitment needs. All prices are customized based on your requirements.
+            {t.subtitle}
           </p>
         </div>
 
@@ -76,16 +101,17 @@ export const PricingSection = () => {
           {plans.map((plan, index) => (
             <Card
               key={index}
-              className={`relative hover:shadow-elegant transition-all duration-300 ${
+              className={`relative hover:shadow-elegant transition-all duration-300 animate-fade-in-up ${
                 plan.highlighted
                   ? 'border-primary border-2 shadow-lg scale-105'
-                  : 'border-border'
+                  : 'border-border hover:scale-105'
               }`}
+              style={{animationDelay: `${index * 0.15}s`}}
             >
               {plan.highlighted && (
                 <div className="absolute -top-4 left-1/2 -translate-x-1/2">
                   <span className="bg-gradient-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
-                    Most Popular
+                    {language === 'en' ? 'Most Popular' : 'Найпопулярніший'}
                   </span>
                 </div>
               )}
@@ -102,7 +128,7 @@ export const PricingSection = () => {
                     {plan.price}
                   </div>
                   <div className="text-sm text-muted-foreground mt-1">
-                    Based on requirements
+                    {t.basedOn}
                   </div>
                 </div>
               </CardHeader>
@@ -119,22 +145,22 @@ export const PricingSection = () => {
 
                 <Button
                   onClick={() => scrollToSection('contact')}
-                  className={`w-full mt-6 ${
+                  className={`w-full mt-6 transition-all duration-300 ${
                     plan.highlighted
-                      ? 'bg-gradient-primary text-primary-foreground'
-                      : 'bg-muted text-foreground hover:bg-muted/80'
+                      ? 'bg-gradient-primary text-primary-foreground hover:scale-105'
+                      : 'bg-muted text-foreground hover:bg-muted/80 hover:scale-105'
                   }`}
                 >
-                  Get Started
+                  {t.getStarted}
                 </Button>
               </CardContent>
             </Card>
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-12 text-center animate-fade-in" style={{animationDelay: '0.6s'}}>
           <p className="text-muted-foreground">
-            Payment only after successful completion of probation period. No hidden fees.
+            {t.paymentNote}
           </p>
         </div>
       </div>
