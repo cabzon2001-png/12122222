@@ -8,7 +8,7 @@ import ProcessSection from '../components/ProcessSection';
 import IndustriesSection from '../components/IndustriesSection';
 import CountriesMap from '../components/CountriesMap';
 import TestimonialsSection from '../components/TestimonialsSection';
-import PricingSection from '../components/PricingSection';
+import ClientsPartnersSection from '../components/ClientsPartnersSection';
 import FAQSection from '../components/FAQSection';
 import ContactForms from '../components/ContactForms';
 import Footer from '../components/Footer';
@@ -25,7 +25,7 @@ export default function HomePage() {
       <IndustriesSection />
       <CountriesMap />
       <TestimonialsSection />
-      <PricingSection />
+      <ClientsPartnersSection />
       <FAQSection />
       <ContactForms />
       <Footer />
