@@ -1,48 +1,53 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Clock, Target, Headphones, DollarSign, Zap, Award } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { translations } from '@/translations/translations';
 
 export const ServicesSection = () => {
+  const { language } = useLanguage();
+  const t = translations[language].services;
+
   const services = [
     {
       icon: Clock,
-      title: 'Time Savings',
-      description: 'We handle the entire recruitment process, allowing you to focus on your core business operations.',
+      title: t.timeSavings.title,
+      description: t.timeSavings.description,
       color: 'text-primary',
       bgColor: 'bg-primary/10',
     },
     {
       icon: Target,
-      title: 'Precise Candidate Selection',
-      description: 'Access to a wide network of talent, carefully matched to your company needs and requirements.',
+      title: t.candidateSelection.title,
+      description: t.candidateSelection.description,
       color: 'text-secondary',
       bgColor: 'bg-secondary/10',
     },
     {
       icon: Headphones,
-      title: 'Professional Consulting',
-      description: 'Our HR team provides support and consultation at every stage, ensuring expert guidance.',
+      title: t.consulting.title,
+      description: t.consulting.description,
       color: 'text-primary',
       bgColor: 'bg-primary/10',
     },
     {
       icon: DollarSign,
-      title: 'Cost Optimization',
-      description: 'Reduce direct employment costs while enabling more effective budget management.',
+      title: t.costOptimization.title,
+      description: t.costOptimization.description,
       color: 'text-secondary',
       bgColor: 'bg-secondary/10',
     },
     {
       icon: Zap,
-      title: 'Business Flexibility',
-      description: 'Adapt your team to current needs, ensuring simple scaling of operations.',
+      title: t.flexibility.title,
+      description: t.flexibility.description,
       color: 'text-primary',
       bgColor: 'bg-primary/10',
     },
     {
       icon: Award,
-      title: 'Expert Knowledge',
-      description: 'Access to specialists and latest technologies without expanding internal resources.',
+      title: t.expertise.title,
+      description: t.expertise.description,
       color: 'text-secondary',
       bgColor: 'bg-secondary/10',
     },
@@ -51,17 +56,17 @@ export const ServicesSection = () => {
   return (
     <section id="services" className="py-20 bg-background">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in">
           <div className="inline-block bg-accent px-4 py-2 rounded-full mb-4">
             <span className="text-sm font-medium text-accent-foreground uppercase tracking-wide">
-              Services
+              {t.badge}
             </span>
           </div>
           <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4">
-            Comprehensive Recruitment Solutions
+            {t.title}
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Tailored to your staffing needs - respond to market challenges together with ProfiWay
+            {t.subtitle}
           </p>
         </div>
 
