@@ -239,10 +239,10 @@ export const ContactForms = () => {
 
                 <Button
                   type="submit"
-                  className="w-full bg-gradient-primary text-primary-foreground hover:opacity-90 transition-smooth"
+                  className="w-full bg-gradient-primary text-primary-foreground hover:opacity-90 hover:scale-105 transition-all duration-300"
                   size="lg"
                 >
-                  Request Employees
+                  {t.requestEmployees}
                 </Button>
               </form>
             </CardContent>
