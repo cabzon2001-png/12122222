@@ -39,7 +39,7 @@ export const ContactForms = () => {
   const handleEmployerSubmit = (e) => {
     e.preventDefault();
     if (!employerForm.privacy) {
-      toast.error('Please accept the privacy policy');
+      toast.error(language === 'en' ? 'Please accept the privacy policy' : 'Будь ласка, прийміть політику конфіденційності');
       return;
     }
     // Store in localStorage for demo
@@ -47,7 +47,7 @@ export const ContactForms = () => {
     submissions.push({ ...employerForm, date: new Date().toISOString() });
     localStorage.setItem('employerSubmissions', JSON.stringify(submissions));
     
-    toast.success('Request submitted successfully! We will contact you soon.');
+    toast.success(language === 'en' ? 'Request submitted successfully! We will contact you soon.' : 'Заявку успішно надіслано! Ми зв\'яжемося з вами найближчим часом.');
     setEmployerForm({
       name: '',
       company: '',
