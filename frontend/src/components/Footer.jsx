@@ -74,7 +74,7 @@ export const Footer = () => {
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h3 className="font-heading font-semibold text-lg text-foreground">Contact Us</h3>
+            <h3 className="font-heading font-semibold text-lg text-foreground">{t.contactUs}</h3>
             <ul className="space-y-3">
               <li className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
