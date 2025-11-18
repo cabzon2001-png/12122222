@@ -1,34 +1,39 @@
 import React from 'react';
 import { Users, Globe, Award, TrendingUp } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { translations } from '@/translations/translations';
 
 export const StatsSection = () => {
+  const { language } = useLanguage();
+  const t = translations[language].stats;
+
   const stats = [
     {
       icon: Users,
       value: '5000+',
-      label: 'Workers Successfully Placed',
+      label: t.workersPlaced,
       color: 'text-primary',
       bgColor: 'bg-primary/10',
     },
     {
       icon: Globe,
       value: '15+',
-      label: 'Countries We Recruit From',
+      label: t.countriesRecruit,
       color: 'text-secondary',
       bgColor: 'bg-secondary/10',
     },
     {
       icon: Award,
       value: '98%',
-      label: 'Client Satisfaction Rate',
+      label: t.satisfaction,
       color: 'text-primary',
       bgColor: 'bg-primary/10',
     },
     {
       icon: TrendingUp,
       value: '200+',
-      label: 'European Companies Served',
+      label: t.companiesServed,
       color: 'text-secondary',
       bgColor: 'bg-secondary/10',
     },
@@ -37,12 +42,12 @@ export const StatsSection = () => {
   return (
     <section id="about" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="font-heading font-bold text-3xl sm:text-4xl text-foreground mb-4">
-            Our Numbers Speak for Themselves
+            {t.title}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Trusted by leading European companies for international recruitment
+            {t.subtitle}
           </p>
         </div>
 
