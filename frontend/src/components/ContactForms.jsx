@@ -64,7 +64,7 @@ export const ContactForms = () => {
   const handleCandidateSubmit = (e) => {
     e.preventDefault();
     if (!candidateForm.privacy) {
-      toast.error('Please accept the privacy policy');
+      toast.error(language === 'en' ? 'Please accept the privacy policy' : 'Будь ласка, прийміть політику конфіденційності');
       return;
     }
     // Store in localStorage for demo
@@ -72,7 +72,7 @@ export const ContactForms = () => {
     submissions.push({ ...candidateForm, date: new Date().toISOString() });
     localStorage.setItem('candidateSubmissions', JSON.stringify(submissions));
     
-    toast.success('Application submitted successfully! We will review your profile.');
+    toast.success(language === 'en' ? 'Application submitted successfully! We will review your profile.' : 'Заявку успішно надіслано! Ми розглянемо ваш профіль.');
     setCandidateForm({
       name: '',
       originCountry: '',
