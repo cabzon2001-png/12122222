@@ -1,8 +1,13 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Users, Globe, Award } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { translations } from '@/translations/translations';
 
 export const HeroSection = () => {
+  const { language } = useLanguage();
+  const t = translations[language].hero;
+
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -16,17 +21,17 @@ export const HeroSection = () => {
       <div className="absolute inset-0 gradient-subtle" />
       
       {/* Decorative Elements */}
-      <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+      <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+      <div className="absolute bottom-20 left-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}} />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8 animate-fade-in">
-            <div className="inline-flex items-center space-x-2 bg-accent px-4 py-2 rounded-full">
+            <div className="inline-flex items-center space-x-2 bg-accent px-4 py-2 rounded-full animate-bounce-slow">
               <Award className="w-4 h-4 text-accent-foreground" />
               <span className="text-sm font-medium text-accent-foreground">
-                #1 International Recruitment Agency
+                {t.badge}
               </span>
             </div>
 
