@@ -57,10 +57,11 @@ export const StatsSection = () => {
             return (
               <Card
                 key={index}
-                className="p-6 hover:shadow-elegant transition-smooth border-border bg-card"
+                className="p-6 hover:shadow-elegant hover:scale-105 transition-all duration-300 border-border bg-card animate-fade-in-up"
+                style={{animationDelay: `${index * 0.1}s`}}
               >
                 <div className="flex flex-col items-center text-center space-y-4">
-                  <div className={`w-16 h-16 ${stat.bgColor} rounded-2xl flex items-center justify-center`}>
+                  <div className={`w-16 h-16 ${stat.bgColor} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-smooth`}>
                     <Icon className={`w-8 h-8 ${stat.color}`} />
                   </div>
                   <div className="font-heading font-bold text-4xl text-foreground">
