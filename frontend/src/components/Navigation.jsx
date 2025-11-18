@@ -97,16 +97,24 @@ export const Navigation = () => {
                   <button
                     key={link.id}
                     onClick={() => scrollToSection(link.id)}
-                    className="text-left text-lg font-medium text-foreground hover:text-primary transition-smooth py-2"
+                    className="text-left text-lg font-medium text-foreground hover:text-primary transition-smooth py-2 hover:translate-x-2"
                   >
                     {link.label}
                   </button>
                 ))}
                 <Button
+                  variant="outline"
+                  onClick={toggleLanguage}
+                  className="w-full mt-4"
+                >
+                  <Languages className="w-4 h-4 mr-2" />
+                  {language === 'en' ? 'Switch to українська' : 'Switch to English'}
+                </Button>
+                <Button
                   onClick={() => scrollToSection('contact')}
                   className="w-full bg-gradient-primary text-primary-foreground mt-4"
                 >
-                  Get Started
+                  {t.getStarted}
                 </Button>
               </div>
             </SheetContent>
