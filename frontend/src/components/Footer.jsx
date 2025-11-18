@@ -1,8 +1,14 @@
 import React from 'react';
 import { Separator } from '@/components/ui/separator';
 import { Mail, Phone, MapPin, Globe } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { translations } from '@/translations/translations';
 
 export const Footer = () => {
+  const { language } = useLanguage();
+  const t = translations[language].footer;
+  const navT = translations[language].nav;
+
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -11,12 +17,12 @@ export const Footer = () => {
   };
 
   const quickLinks = [
-    { label: 'About Us', id: 'about' },
-    { label: 'Services', id: 'services' },
-    { label: 'Process', id: 'process' },
-    { label: 'Industries', id: 'industries' },
-    { label: 'FAQ', id: 'faq' },
-    { label: 'Contact', id: 'contact' },
+    { label: navT.about, id: 'about' },
+    { label: navT.services, id: 'services' },
+    { label: navT.process, id: 'process' },
+    { label: navT.industries, id: 'industries' },
+    { label: navT.faq, id: 'faq' },
+    { label: navT.contact, id: 'contact' },
   ];
 
   return (
@@ -32,14 +38,13 @@ export const Footer = () => {
               <span className="font-heading font-bold text-2xl text-foreground">ProfiWay</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              International recruitment agency connecting Asian talent with European opportunities. 
-              Building partnerships based on trust, professionalism, and transparency.
+              {t.description}
             </p>
           </div>
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h3 className="font-heading font-semibold text-lg text-foreground">Quick Links</h3>
+            <h3 className="font-heading font-semibold text-lg text-foreground">{t.quickLinks}</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.id}>
