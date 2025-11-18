@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X, Globe, Languages } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { translations } from '@/translations/translations';
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const { language, toggleLanguage } = useLanguage();
+  const t = translations[language].nav;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,12 +26,12 @@ export const Navigation = () => {
   };
 
   const navLinks = [
-    { label: 'About', id: 'about' },
-    { label: 'Services', id: 'services' },
-    { label: 'Process', id: 'process' },
-    { label: 'Industries', id: 'industries' },
-    { label: 'FAQ', id: 'faq' },
-    { label: 'Contact', id: 'contact' },
+    { label: t.about, id: 'about' },
+    { label: t.services, id: 'services' },
+    { label: t.process, id: 'process' },
+    { label: t.industries, id: 'industries' },
+    { label: t.faq, id: 'faq' },
+    { label: t.contact, id: 'contact' },
   ];
 
   return (
