@@ -70,16 +70,17 @@ export const Navigation = () => {
             <Button
               variant="ghost"
               size="sm"
-              className="text-muted-foreground hover:text-primary"
+              onClick={toggleLanguage}
+              className="text-muted-foreground hover:text-primary group"
             >
-              <Globe className="w-4 h-4 mr-2" />
-              EN
+              <Languages className="w-4 h-4 mr-2 group-hover:rotate-12 transition-smooth" />
+              {language === 'en' ? 'EN' : 'UA'}
             </Button>
             <Button
               onClick={() => scrollToSection('contact')}
-              className="bg-gradient-primary text-primary-foreground hover:opacity-90 transition-smooth"
+              className="bg-gradient-primary text-primary-foreground hover:opacity-90 hover:scale-105 transition-all duration-300 shadow-md hover:shadow-lg"
             >
-              Get Started
+              {t.getStarted}
             </Button>
           </div>
 
