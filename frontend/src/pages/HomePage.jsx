@@ -6,7 +6,6 @@ import ServicesSection from '../components/ServicesSection';
 import WhyAsianWorkers from '../components/WhyAsianWorkers';
 import ProcessSection from '../components/ProcessSection';
 import IndustriesSection from '../components/IndustriesSection';
-import CountriesMap from '../components/CountriesMap';
 import TestimonialsSection from '../components/TestimonialsSection';
 import ClientsPartnersSection from '../components/ClientsPartnersSection';
 import FAQSection from '../components/FAQSection';
@@ -23,7 +22,6 @@ export default function HomePage() {
       <WhyAsianWorkers />
       <ProcessSection />
       <IndustriesSection />
-      <CountriesMap />
       <TestimonialsSection />
       <ClientsPartnersSection />
       <FAQSection />
