@@ -8,8 +8,12 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Checkbox } from '@/components/ui/checkbox';
 import { Building2, User } from 'lucide-react';
 import { toast } from 'sonner';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { translations } from '@/translations/translations';
 
 export const ContactForms = () => {
+  const { language } = useLanguage();
+  const t = translations[language].contact;
   const [employerForm, setEmployerForm] = useState({
     name: '',
     company: '',
