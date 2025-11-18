@@ -76,10 +76,11 @@ export const ServicesSection = () => {
             return (
               <Card
                 key={index}
-                className="group hover:shadow-elegant transition-all duration-300 border-border bg-card hover:border-primary/50"
+                className="group hover:shadow-elegant hover:scale-105 transition-all duration-300 border-border bg-card hover:border-primary/50 animate-fade-in-up"
+                style={{animationDelay: `${index * 0.1}s`}}
               >
                 <CardHeader>
-                  <div className={`w-14 h-14 ${service.bgColor} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-smooth`}>
+                  <div className={`w-14 h-14 ${service.bgColor} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
                     <Icon className={`w-7 h-7 ${service.color}`} />
                   </div>
                   <CardTitle className="text-xl font-heading font-semibold text-foreground">
