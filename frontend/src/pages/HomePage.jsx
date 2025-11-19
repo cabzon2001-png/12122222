@@ -7,7 +7,7 @@ import WhyAsianWorkers from '../components/WhyAsianWorkers';
 import ProcessSection from '../components/ProcessSection';
 import IndustriesSection from '../components/IndustriesSection';
 import TestimonialsSection from '../components/TestimonialsSection';
-import ClientsPartnersSection from '../components/ClientsPartnersSection';
+import HotJobsSection from '../components/HotJobsSection';
 import FAQSection from '../components/FAQSection';
 import ContactForms from '../components/ContactForms';
 import Footer from '../components/Footer';
