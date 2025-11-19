@@ -122,6 +122,12 @@ export const Navigation = () => {
                     {link.label}
                   </button>
                 ))}
+                <button
+                  onClick={() => navigate('/jobs')}
+                  className="text-left text-lg font-medium text-foreground hover:text-primary transition-smooth py-2 hover:translate-x-2"
+                >
+                  {t.jobs}
+                </button>
                 <Button
                   variant="outline"
                   onClick={toggleLanguage}
