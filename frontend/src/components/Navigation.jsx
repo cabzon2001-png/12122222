@@ -77,6 +77,12 @@ export const Navigation = () => {
                 {link.label}
               </button>
             ))}
+            <button
+              onClick={() => navigate('/jobs')}
+              className="text-sm font-medium text-muted-foreground hover:text-primary transition-smooth"
+            >
+              {t.jobs}
+            </button>
           </div>
 
           {/* CTA Buttons */}
