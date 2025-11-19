@@ -72,9 +72,19 @@ const HotJobsSection = () => {
           <h2 className="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4">
             {t.title}
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-sm sm:text-base mb-6">
             {t.subtitle}
           </p>
+          <Button
+            variant="outline"
+            size="sm"
+            className="mt-2"
+            onClick={() => {
+              window.location.href = '/jobs';
+            }}
+          >
+            {language === 'ua' ? 'Переглянути всі вакансії' : 'View all jobs'}
+          </Button>
         </div>
 
         {/* Jobs Grid */}
