@@ -330,6 +330,8 @@ export const translations = {
         mid: '1–3 роки',
         senior: '3+ роки',
       },
+      experienceFilterLabel: 'Рівень досвіду',
+      experiencePlaceholder: 'Обрати рівень',
       any: 'Будь-яка',
       resultsLabel: 'Знайдено вакансій: {count}',
       clearFilters: 'Скинути фільтри',
