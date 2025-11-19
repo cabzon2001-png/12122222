@@ -4,6 +4,7 @@ import { Menu, X, Globe, Languages } from 'lucide-react';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { translations } from '@/translations/translations';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
