@@ -1,5 +1,7 @@
 import React from 'react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Button } from '@/components/ui/button';
+
 import { Flame, Factory, Warehouse, Hammer, Cog, Sparkles } from 'lucide-react';
 import { translations } from '@/translations/translations';
 
