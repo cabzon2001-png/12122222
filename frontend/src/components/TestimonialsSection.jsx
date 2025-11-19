@@ -59,7 +59,7 @@ export const TestimonialsSection = () => {
                 </div>
 
                 {/* Chat body */}
-                <div className="bg-[rgb(230,235,240)] dark:bg-background px-3 py-4 space-y-2 min-h-[230px]">
+                <div className="bg-[#0b141a] px-3 py-4 space-y-2 min-h-[230px] text-white">
                   {chat.messages.map((msg, i) => {
                     const isClient = msg.from === 'client';
                     return (
@@ -70,15 +70,15 @@ export const TestimonialsSection = () => {
                         <div className="max-w-[80%] flex flex-col">
                           <div
                             className={cn(
-                              'rounded-2xl px-3 py-2 text-sm shadow-sm',
+                              'rounded-2xl px-3 py-2 text-sm shadow-sm break-words',
                               isClient
-                                ? 'bg-white text-foreground rounded-bl-sm'
-                                : 'bg-[#d1f4cc] text-foreground rounded-br-sm'
+                                ? 'bg-[#202c33] text-white rounded-bl-sm'
+                                : 'bg-[#005c4b] text-white rounded-br-sm'
                             )}
                           >
                             {msg.text}
                           </div>
-                          <span className="mt-1 text-[10px] text-muted-foreground self-end">
+                          <span className="mt-1 text-[10px] text-gray-400 self-end">
                             {msg.time}
                           </span>
                         </div>
