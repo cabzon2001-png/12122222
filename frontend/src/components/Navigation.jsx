@@ -29,12 +29,12 @@ export const Navigation = () => {
   };
 
   const navLinks = [
-    { label: t.about, id: 'about' },
-    { label: t.services, id: 'services' },
-    { label: t.process, id: 'process' },
-    { label: t.industries, id: 'industries' },
-    { label: t.faq, id: 'faq' },
-    { label: t.contact, id: 'contact' },
+    { label: t.about, id: 'about', href: '/' },
+    { label: t.services, id: 'services', href: '/' },
+    { label: t.process, id: 'process', href: '/' },
+    { label: t.industries, id: 'industries', href: '/' },
+    { label: t.faq, id: 'faq', href: '/' },
+    { label: t.contact, id: 'contact', href: '/' },
   ];
 
   return (
