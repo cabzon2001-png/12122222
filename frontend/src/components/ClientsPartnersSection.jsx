@@ -354,34 +354,49 @@ export const ClientsPartnersSection = () => {
           <h3 className="font-heading font-bold text-3xl text-foreground mb-4">
             {language === 'en' ? 'Trusted by leading companies' : 'Нам довіряють провідні компанії'}
           </h3>
-          <p className="text-muted-foreground mb-12">
-            {language === 'en' ? 'Our partners who believe in our mission' : 'Наші партнери, які вірять у нашу місію'}
+          <p className="text-muted-foreground mb-8">
+            {language === 'en'
+              ? 'Selected partners who trust ProfiWay with international recruitment'
+              : 'Обрані партнери, які довіряють ProfiWay міжнародний рекрутинг'}
           </p>
-          
-          <div className="flex flex-wrap items-center justify-center gap-12 md:gap-16">
-            {clients.map((client, index) => (
-              <div 
-                key={client.name}
-                className={`grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110 cursor-pointer ${
-                  isVisible ? 'animate-fade-in' : 'opacity-0'
-                }`}
-                style={{animationDelay: isVisible ? `${1.2 + index * 0.1}s` : '0s'}}
-              >
-                <img 
-                  src={client.img} 
-                  alt={client.name} 
-                  className="h-14 md:h-16 object-contain filter drop-shadow-2xl"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.style.display = 'none';
-                    const fallback = document.createElement('div');
-                    fallback.className = 'h-14 md:h-16 flex items-center justify-center px-8 py-4 border-2 border-border rounded-xl bg-card shadow-lg hover:shadow-2xl transition-shadow';
-                    fallback.innerHTML = `<span class="font-bold text-xl text-foreground">${client.name}</span>`;
-                    e.target.parentNode.appendChild(fallback);
-                  }}
-                />
-              </div>
-            ))}
+
+          <div className="relative max-w-5xl mx-auto">
+            <Carousel
+              opts={{
+                align: 'center',
+                loop: true,
+                slidesToScroll: 1,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="items-center">
+                {clients.map((client) => (
+                  <CarouselItem
+                    key={client.name}
+                    className="basis-1/2 sm:basis-1/3 lg:basis-1/5 flex justify-center"
+                  >
+                    <div className="grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110 cursor-pointer flex items-center justify-center h-16 w-32">
+                      <img
+                        src={client.img}
+                        alt={client.name}
+                        className="max-h-10 sm:max-h-12 object-contain filter drop-shadow-2xl"
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.style.display = 'none';
+                          const fallback = document.createElement('div');
+                          fallback.className = 'h-10 sm:h-12 flex items-center justify-center px-4 border border-border rounded-lg bg-card shadow-sm';
+                          fallback.innerHTML = `<span class=\"font-semibold text-xs sm:text-sm text-foreground\">${client.name}</span>`;
+                          e.target.parentNode.appendChild(fallback);
+                        }}
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+
+              <CarouselPrevious className="-left-6 sm:-left-10 bg-background/80 border border-border shadow-md" />
+              <CarouselNext className="-right-6 sm:-right-10 bg-background/80 border border-border shadow-md" />
+            </Carousel>
           </div>
         </div>
       </div>
