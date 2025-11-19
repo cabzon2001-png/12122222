@@ -149,6 +149,66 @@ const whatsappTestimonials = [
       },
     ],
   },
+  {
+    id: 'hotel-owner',
+    type: 'employer',
+    language: 'en',
+    title: 'Hotel owner (HoReCa staff)',
+    avatar: 'H',
+    name: 'Hotel Manager – AT',
+    messages: [
+      {
+        from: 'client',
+        time: '10:02',
+        text: 'Good morning! Just wanted to let you know that cleaners from Bangladesh are doing great job at our hotel in Vienna.',
+      },
+      {
+        from: 'profiway',
+        time: '10:04',
+        text: 'Good morning! Happy to hear that 😊 Are there any points we should improve or adjust?',
+      },
+      {
+        from: 'client',
+        time: '10:06',
+        text: 'No, everything fine. Rooms are ready on time, guests leave positive comments. We are planning to open one more floor in summer, will need extra staff.',
+      },
+      {
+        from: 'profiway',
+        time: '10:08',
+        text: 'Perfect, we can prepare candidates in advance so they arrive before high season. Just send us approximate dates and numbers.',
+      },
+    ],
+  },
+  {
+    id: 'worker-family',
+    type: 'candidate',
+    language: 'ua',
+    title: 'Працівник ділиться враженнями для сімʼї',
+    avatar: 'O',
+    name: 'Oleksii – factory job',
+    messages: [
+      {
+        from: 'client',
+        time: '20:31',
+        text: 'Привіт! Хотів сказати дякую за допомогу з роботою. Уже місяць на заводі в Чехії, все стабільно.',
+      },
+      {
+        from: 'profiway',
+        time: '20:33',
+        text: 'Привіт, Олексію! Радий, що все добре 🙌 Як тобі колектив і житло?',
+      },
+      {
+        from: 'client',
+        time: '20:35',
+        text: 'Колектив нормальний, багато наших та хлопців з Азії. Гуртожиток чистий, поруч магазин і зупинка. Дружина спокійніша, бо бачить стабільні виплати.',
+      },
+      {
+        from: 'profiway',
+        time: '20:37',
+        text: 'Класно чути такі новини. Якщо вона захоче теж виїхати пізніше — можемо підібрати варіант для сімейної пари.',
+      },
+    ],
+  },
 ];
 
 export default whatsappTestimonials;
