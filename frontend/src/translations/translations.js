@@ -8,6 +8,7 @@ export const translations = {
       faq: 'FAQ',
       contact: 'Contact',
       getStarted: 'Get Started',
+      jobs: 'Jobs',
     },
     hero: {
       badge: '#1 International Recruitment Agency',
