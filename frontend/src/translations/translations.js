@@ -167,6 +167,7 @@ export const translations = {
       faq: 'FAQ',
       contact: 'Контакти',
       getStarted: 'Почати',
+      jobs: 'Вакансії',
     },
     hero: {
       badge: '#1 Міжнародне агентство з рекрутингу',
