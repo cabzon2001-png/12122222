@@ -368,6 +368,13 @@ export const ClientsPartnersSection = () => {
                 loop: true,
                 slidesToScroll: 1,
               }}
+              plugins={[
+                Autoplay({
+                  delay: 3500,
+                  stopOnInteraction: true,
+                  stopOnMouseEnter: true,
+                }),
+              ]}
               className="w-full"
             >
               <CarouselContent className="items-center">
