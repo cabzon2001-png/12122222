@@ -65,6 +65,12 @@ const JobsPage = () => {
 
   const text = t.jobsPage;
 
+  const allExperienceOptions = [
+    { value: 'entry', label: text.experienceOptions.entry },
+    { value: 'mid', label: text.experienceOptions.mid },
+    { value: 'senior', label: text.experienceOptions.senior },
+  ];
+
   return (
     <div className="pt-24 pb-20 bg-background min-h-screen">
       <div className="container mx-auto px-4 lg:px-8">
