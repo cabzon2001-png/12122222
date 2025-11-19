@@ -1,52 +1,23 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Star, Quote } from 'lucide-react';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { translations } from '@/translations/translations';
+import whatsappTestimonials from '@/data/whatsappTestimonials';
+import { cn } from '@/lib/utils';
 
 export const TestimonialsSection = () => {
   const { language } = useLanguage();
   const t = translations[language].testimonials;
 
-  const testimonials = [
-    {
-      name: 'Michael Schmidt',
-      role: 'CEO, Manufacturing Corp',
-      company: language === 'en' ? 'Germany' : 'Німеччина',
-      content: language === 'en' 
-        ? 'ProfiWay helped us find 50 qualified workers from India within just 3 months. Their professionalism and dedication exceeded our expectations. The workers are highly skilled and committed.'
-        : 'ProfiWay допомогли нам знайти 50 кваліфікованих працівників з Індії всього за 3 місяці. Їхній професіоналізм та відданість перевершили наші очікування. Працівники висококваліфіковані та відповідальні.',
-      rating: 5,
-      avatar: 'MS',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=faces',
-    },
-    {
-      name: 'Anna Kowalska',
-      role: language === 'en' ? 'HR Director' : 'Директор з персоналу',
-      company: language === 'en' ? 'Poland' : 'Польща',
-      content: language === 'en'
-        ? 'Working with ProfiWay has been a game-changer for our construction projects. The quality of candidates and the smooth process made international hiring stress-free.'
-        : 'Робота з ProfiWay стала переломним моментом для наших будівельних проектів. Якість кандидатів та плавний процес зробили міжнародний найм безстресовим.',
-      rating: 5,
-      avatar: 'AK',
-      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=faces',
-    },
-    {
-      name: 'Jan Novak',
-      role: language === 'en' ? 'Operations Manager' : 'Менеджер з операцій',
-      company: language === 'en' ? 'Czech Republic' : 'Чехія',
-      content: language === 'en'
-        ? 'Excellent service from start to finish. The workers from Bangladesh have been incredibly reliable and hardworking. ProfiWay handled all documentation professionally.'
-        : 'Відмінний сервіс від початку до кінця. Працівники з Бангладеш були неймовірно надійними та працьовитими. ProfiWay професійно впоралися з усією документацією.',
-      rating: 5,
-      avatar: 'JN',
-      image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=faces',
-    },
-  ];
+  const filtered = whatsappTestimonials.filter(
+    (item) => item.language === language || item.language === 'en'
+  );
+
+  const formatName = (item) => item.name;
 
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-20 bg-muted/30" id="testimonials">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center mb-12 animate-fade-in">
           <div className="inline-block bg-accent px-4 py-2 rounded-full mb-4">
@@ -62,44 +33,58 @@ export const TestimonialsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {filtered.map((chat, index) => (
             <Card
-              key={index}
-              className="hover:shadow-elegant hover:scale-105 transition-all duration-300 border-border bg-card animate-fade-in-up overflow-hidden"
-              style={{animationDelay: `${index * 0.15}s`}}
+              key={chat.id}
+              className="hover:shadow-elegant transition-all duration-300 border-border bg-card animate-fade-in-up overflow-hidden"
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
-              <CardContent className="p-6 space-y-4">
-                <div className="flex items-center justify-between">
-                  <Quote className="w-10 h-10 text-primary/20" />
-                  <div className="flex space-x-1">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-secondary text-secondary" />
-                    ))}
+              <CardContent className="p-0">
+                {/* Header */}
+                <div className="flex items-center gap-3 px-4 py-3 border-b border-border bg-muted/60">
+                  <Avatar className="w-9 h-9">
+                    <AvatarFallback className="bg-gradient-primary text-primary-foreground text-sm font-semibold">
+                      {chat.avatar}
+                    </AvatarFallback>
+                  </Avatar>
+                  <div className="flex flex-col">
+                    <span className="text-sm font-semibold text-foreground">
+                      {formatName(chat)}
+                    </span>
+                    <span className="text-xs text-muted-foreground">
+                      WhatsApp · {chat.type === 'employer' ? (language === 'ua' ? 'Роботодавець' : 'Employer') : language === 'ua' ? 'Кандидат' : 'Candidate'}
+                    </span>
                   </div>
                 </div>
 
-                <p className="text-muted-foreground leading-relaxed italic min-h-[120px]">
-                  "{testimonial.content}"
-                </p>
-
-                <div className="flex items-center space-x-4 pt-4 border-t border-border">
-                  <Avatar className="w-14 h-14 ring-2 ring-primary/20">
-                    <AvatarImage src={testimonial.image} alt={testimonial.name} />
-                    <AvatarFallback className="bg-gradient-primary text-primary-foreground font-semibold text-lg">
-                      {testimonial.avatar}
-                    </AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <div className="font-semibold text-foreground text-lg">{testimonial.name}</div>
-                    <div className="text-sm text-muted-foreground">
-                      {testimonial.role}
-                    </div>
-                    <div className="text-xs text-muted-foreground flex items-center">
-                      <span className="mr-1">📍</span>
-                      {testimonial.company}
-                    </div>
-                  </div>
+                {/* Chat body */}
+                <div className="bg-[rgb(230,235,240)] dark:bg-background px-3 py-4 space-y-2 min-h-[230px]">
+                  {chat.messages.map((msg, i) => {
+                    const isClient = msg.from === 'client';
+                    return (
+                      <div
+                        key={i}
+                        className={cn('flex w-full', isClient ? 'justify-start' : 'justify-end')}
+                      >
+                        <div className="max-w-[80%] flex flex-col">
+                          <div
+                            className={cn(
+                              'rounded-2xl px-3 py-2 text-sm shadow-sm',
+                              isClient
+                                ? 'bg-white text-foreground rounded-bl-sm'
+                                : 'bg-[#d1f4cc] text-foreground rounded-br-sm'
+                            )}
+                          >
+                            {msg.text}
+                          </div>
+                          <span className="mt-1 text-[10px] text-muted-foreground self-end">
+                            {msg.time}
+                          </span>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </CardContent>
             </Card>
