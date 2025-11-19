@@ -118,6 +118,44 @@ export const translations = {
       contactUs: 'Contact Us',
       allRights: 'All rights reserved',
     },
+    hotJobs: {
+      badge: 'Hot vacancies',
+      title: 'Top-6 jobs for general workers in Europe',
+      subtitle: 'Most requested, stable and accessible positions for candidates without rare qualifications.',
+      labelWorkers: 'For general workers',
+      jobs: [
+        {
+          title: 'Factory Worker',
+          description: 'Sorting, packing, production lines in factories and plants.',
+          demand: 'Huge demand in Poland, Czech Republic, Germany, Slovakia.',
+        },
+        {
+          title: 'Warehouse Worker',
+          description: 'Order picking, working with scanner, packing and dispatch.',
+          demand: 'Popular in countries with large logistics hubs (Germany, Netherlands, Poland).',
+        },
+        {
+          title: 'Construction Helper',
+          description: 'Demolition, cleaning, assisting masters, supplying materials.',
+          demand: 'One of the most stable directions in the EU.',
+        },
+        {
+          title: 'Production Line Operator',
+          description: 'Working on automated lines: food, automotive, electronics.',
+          demand: 'Highly in demand in Slovakia, Czech Republic and Hungary.',
+        },
+        {
+          title: 'Cleaning Staff',
+          description: 'Cleaning in hotels, offices, warehouses, industrial facilities.',
+          demand: 'High demand across Europe, especially in HoReCa.',
+        },
+        {
+          title: 'Packer / Sorter',
+          description: 'Food factories, warehouses, logistics centers.',
+          demand: 'Suitable almost for everyone, large-scale recruitment.',
+        },
+      ],
+    },
   },
   ua: {
     nav: {
