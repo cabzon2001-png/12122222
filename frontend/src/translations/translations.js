@@ -135,6 +135,8 @@ export const translations = {
         mid: '1–3 years',
         senior: '3+ years',
       },
+      experienceFilterLabel: 'Experience level',
+      experiencePlaceholder: 'Select level',
       any: 'Any',
       resultsLabel: 'Jobs found: {count}',
       clearFilters: 'Clear filters',
