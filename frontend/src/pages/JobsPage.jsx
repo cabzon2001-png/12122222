@@ -19,6 +19,7 @@ const JobsPage = () => {
   const [country, setCountry] = useState('all');
   const [category, setCategory] = useState('all');
   const [experience, setExperience] = useState('all');
+  const [isMobileFiltersOpen, setIsMobileFiltersOpen] = useState(false);
 
   const countries = useMemo(() => {
     const set = new Set();
