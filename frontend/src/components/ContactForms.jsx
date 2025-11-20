@@ -15,6 +15,7 @@ import { ShieldCheck, FileCheck, Globe2 } from 'lucide-react';
 export const ContactForms = () => {
   const { language } = useLanguage();
   const t = translations[language].contact;
+  const guarantees = translations[language].contact.guarantees;
   const [employerForm, setEmployerForm] = useState({
     name: '',
     company: '',
