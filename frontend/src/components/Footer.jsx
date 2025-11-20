@@ -79,8 +79,8 @@ export const Footer = () => {
               <li className="flex items-start space-x-3">
                 <Phone className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <div className="text-sm text-muted-foreground">
-                  <div>+38 (050) 123-45-67</div>
-                  <div>+38 (067) 987-65-43</div>
+                  <div>+38 (097) 459-01-01</div>
+                  <div>+38 (097) 399-41-46</div>
                 </div>
               </li>
               <li className="flex items-start space-x-3">
