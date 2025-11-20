@@ -380,6 +380,41 @@ export const ContactForms = () => {
                   {t.applyNow}
                 </Button>
               </form>
+
+          {/* Guarantees / Info Block */}
+          <div className="space-y-4 lg:space-y-5 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+            <div className="bg-muted/60 border border-border rounded-2xl p-5 sm:p-6 shadow-sm">
+              <h3 className="font-heading font-semibold text-lg sm:text-xl mb-3 flex items-center gap-2 text-foreground">
+                <ShieldCheck className="w-5 h-5 text-primary" />
+                {guarantees.employersTitle}
+              </h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                {guarantees.itemsEmployers.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <FileCheck className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-card border border-primary/20 rounded-2xl p-5 sm:p-6 shadow-elegant">
+              <div className="flex items-center gap-2 mb-3">
+                <Globe2 className="w-5 h-5 text-primary" />
+                <h3 className="font-heading font-semibold text-lg sm:text-xl text-foreground">
+                  {guarantees.candidatesTitle}
+                </h3>
+              </div>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                {guarantees.itemsCandidates.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <span className="mt-0.5 text-primary">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
             </CardContent>
           </Card>
         </div>
