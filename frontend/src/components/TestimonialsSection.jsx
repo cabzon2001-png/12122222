@@ -8,6 +8,8 @@ import { cn } from '@/lib/utils';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import { Star } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+
 
 export const TestimonialsSection = () => {
   const { language } = useLanguage();
