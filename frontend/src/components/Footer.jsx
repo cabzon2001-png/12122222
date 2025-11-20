@@ -92,9 +92,9 @@ export const Footer = () => {
               <li className="flex items-start space-x-3">
                 <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <span className="text-sm text-muted-foreground">
-                  Kyiv, Ukraine
+                  20251, Черкаська обл., Звенигородський р-н
                   <br />
-                  Prykladna St. 12, Office 45
+                  м. Багачеве, вул. Леонтовича, буд. 10, кв. 3
                 </span>
               </li>
               <li className="flex items-start space-x-3">
