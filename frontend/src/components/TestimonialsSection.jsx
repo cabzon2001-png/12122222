@@ -85,7 +85,7 @@ export const TestimonialsSection = () => {
           </p>
         </div>
 
-        <div className="relative">
+        <div className="relative mb-10">
           <Carousel
             opts={{
               align: 'start',
