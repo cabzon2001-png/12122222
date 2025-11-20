@@ -103,7 +103,7 @@ export const ContactForms = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-[minmax(0,2fr)_minmax(0,1.4fr)] gap-8 max-w-7xl mx-auto items-start">
           {/* Employer Form */}
           <Card className="border-border shadow-elegant animate-fade-in-up" style={{animationDelay: '0.1s'}}>
             <CardHeader>
