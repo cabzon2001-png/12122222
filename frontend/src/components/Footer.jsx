@@ -103,6 +103,14 @@ export const Footer = () => {
                 <span className="text-sm text-muted-foreground">www.profiway.com</span>
               </li>
             </ul>
+            <div className="pt-3 border-t border-border/60 mt-3">
+              <p className="text-xs text-muted-foreground flex items-center gap-2">
+                <span className="inline-flex h-6 px-2 items-center justify-center rounded-full bg-primary/10 text-primary text-[11px] font-semibold uppercase tracking-wide">
+                  {language === 'ua' ? 'Ми говоримо' : 'We speak'}
+                </span>
+                <span>UA / EN / PL / RU</span>
+              </p>
+            </div>
           </div>
         </div>
 
