@@ -131,6 +131,20 @@ export const translations = {
       candidateSubtitle: 'Apply now for legal employment opportunities in Europe',
       requestEmployees: 'Request Employees',
       applyNow: 'Apply Now',
+      guarantees: {
+        employersTitle: 'Why employers trust us',
+        candidatesTitle: 'Why candidates choose us',
+        itemsEmployers: [
+          'Only legal, contract-based employment with verified companies',
+          'Transparent fees — no hidden costs or grey intermediaries',
+          'Full support with visas, documents and onboarding',
+        ],
+        itemsCandidates: [
+          'Official work and residence permits in EU countries',
+          'Help with visas, tickets and accommodation coordination',
+          'Support in your language before and after arrival',
+        ],
+      },
     },
     footer: {
       description:
