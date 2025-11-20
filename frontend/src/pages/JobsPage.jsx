@@ -317,11 +317,14 @@ const JobsPage = () => {
                 {text.noResults}
               </div>
             ) : (
-              <div className="flex flex-col gap-4">
+              <div
+                key={animationKey}
+                className="flex flex-col gap-4 animate-fade-in-up"
+              >
                 {filteredJobs.map((job) => (
                   <button
                     key={job.id}
-                    className="group w-full text-left bg-card border border-border rounded-2xl p-5 hover:border-primary hover:shadow-lg transition-all duration-200 flex flex-col justify-between"
+                    className="group w-full text-left bg-card border border-border rounded-2xl p-5 hover:border-emerald-500/80 hover:shadow-lg transition-all duration-200 flex flex-col justify-between relative before:absolute before:left-0 before:top-0 before:bottom-0 before:w-1 before:bg-transparent before:rounded-l-2xl group-hover:before:bg-emerald-500/90"
                     onClick={() => handleCardClick(job.id)}
                   >
                     <div>
