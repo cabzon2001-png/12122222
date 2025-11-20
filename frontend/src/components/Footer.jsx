@@ -137,15 +137,13 @@ export const Footer = () => {
         <div className="mt-8 pt-8 border-t border-border">
           <div className="text-xs text-muted-foreground space-y-2">
             <p>
-              <strong>Company:</strong> ProfiWay Recruiting LLC | <strong>Registration Code:</strong> 12345678 | 
-              <strong> Tax ID:</strong> 123456789012
+              <strong>Company:</strong> TOV "PROFI WEY" (ТОВ "ПРОФІ ВЕЙ") | <strong>EDRPOU Code:</strong> 46134891
             </p>
             <p>
-              <strong>Recruitment License:</strong> #000000 | 
-              <strong> Legal Address:</strong> Kyiv, Prykladna St. 12, Office 45
+              <strong>Legal Address:</strong> 20251, Cherkasy region, Zvenyhorodka district, Bahacheve, Leontovycha St., 10, apt. 3
             </p>
             <p className="leading-relaxed">
-              ProfiWay operates in accordance with international recruitment and immigration law standards. 
+              PROFI WAY operates in accordance with Ukrainian and international recruitment and immigration law standards. 
               All candidates undergo legal document verification, and employer companies undergo basic verification. 
               We do not take hidden payments and do not work with grey intermediaries.
             </p>
