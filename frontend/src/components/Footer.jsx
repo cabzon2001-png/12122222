@@ -86,8 +86,7 @@ export const Footer = () => {
               <li className="flex items-start space-x-3">
                 <Mail className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <div className="text-sm text-muted-foreground">
-                  <div>info@profiway.com</div>
-                  <div>support@profiway.com</div>
+                  <div>profiway24@gmail.com</div>
                 </div>
               </li>
               <li className="flex items-start space-x-3">
