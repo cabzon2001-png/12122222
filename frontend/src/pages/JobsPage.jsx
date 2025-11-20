@@ -32,8 +32,10 @@ const JobsPage = () => {
     return Array.from(set);
   }, [language]);
 
+  const [animationKey, setAnimationKey] = useState(0);
+
   const filteredJobs = useMemo(() => {
-    return jobs.filter((job) => {
+    const result = jobs.filter((job) => {
       const title = job.title[language].toLowerCase();
       const titleEn = job.title.en.toLowerCase();
       const description = job.shortDescription[language].toLowerCase();
@@ -56,6 +58,10 @@ const JobsPage = () => {
 
       return matchesSearch && matchesCountry && matchesCategory && matchesExperience;
     });
+
+    // оновлюємо ключ для анімації при зміні результатів
+    setAnimationKey((prev) => prev + 1);
+    return result;
   }, [search, country, category, experience, language]);
 
   const handleCardClick = (id) => {
