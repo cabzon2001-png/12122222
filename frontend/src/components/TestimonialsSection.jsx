@@ -186,6 +186,35 @@ export const TestimonialsSection = () => {
             <CarouselNext className="-right-4 sm:-right-8 top-1/2 -translate-y-1/2 bg-background/90 border border-border shadow-md" />
           </Carousel>
         </div>
+
+        {/* CTA after testimonials */}
+        <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <Button
+            size="lg"
+            className="bg-gradient-primary text-primary-foreground hover:opacity-90 hover:scale-105 transition-all duration-300"
+            onClick={() => {
+              const form = document.getElementById('contact');
+              if (form) {
+                form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
+          >
+            {language === 'ua' ? 'Замовити працівників' : 'Request workers'}
+          </Button>
+          <Button
+            variant="outline"
+            size="lg"
+            className="border-primary/40 text-primary hover:bg-primary/5 transition-all duration-300"
+            onClick={() => {
+              const form = document.getElementById('contact');
+              if (form) {
+                form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
+          >
+            {language === 'ua' ? 'Подати заявку на роботу' : 'Apply for a job'}
+          </Button>
+        </div>
       </div>
     </section>
   );
