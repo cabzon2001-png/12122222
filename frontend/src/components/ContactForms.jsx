@@ -10,6 +10,7 @@ import { Building2, User } from 'lucide-react';
 import { toast } from 'sonner';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { translations } from '@/translations/translations';
+import { ShieldCheck, FileCheck, Globe2 } from 'lucide-react';
 
 export const ContactForms = () => {
   const { language } = useLanguage();
