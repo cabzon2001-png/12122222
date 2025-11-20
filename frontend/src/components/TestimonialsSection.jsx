@@ -19,6 +19,55 @@ export const TestimonialsSection = () => {
 
   const formatName = (item) => item.name;
 
+  const getRating = (chat) => {
+    // базові рейтинги для візуалізації 3.7–5.0
+    switch (chat.id) {
+      case 'employer-pl-nepal':
+        return 4.9;
+      case 'candidate-de':
+        return 4.8;
+      case 'logistics-owner':
+        return 4.7;
+      case 'construction-company':
+        return 4.6;
+      case 'worker-asia':
+        return 4.5;
+      case 'hotel-owner':
+        return 4.4;
+      case 'worker-family':
+        return 4.3;
+      default:
+        return 4.5;
+    }
+  };
+
+  const renderStars = (rating) => {
+    const fullStars = Math.floor(rating);
+    const halfStar = rating - fullStars >= 0.5;
+    const total = 5;
+    const stars = [];
+
+    for (let i = 0; i < total; i++) {
+      if (i < fullStars) {
+        stars.push(
+          <Star key={i} className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" />
+        );
+      } else if (halfStar && i === fullStars) {
+        stars.push(
+          <Star
+            key={i}
+            className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400/60"
+          />
+        );
+      } else {
+        stars.push(
+          <Star key={i} className="w-3.5 h-3.5 text-muted-foreground/40" />
+        );
+      }
+    }
+    return stars;
+  };
+
   return (
     <section className="py-20 bg-muted/30" id="testimonials">
       <div className="container mx-auto px-4 lg:px-8">
