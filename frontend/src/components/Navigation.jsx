@@ -6,7 +6,7 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { translations } from '@/translations/translations';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-const LOGO_SRC = 'https://customer-assets.emergentagent.com/job_workforce-bridge/artifacts/wz4sqjng_56e2ceb1-2215-4a08-84dd-381a1513ff73.jpg';
+const LOGO_SRC = 'https://customer-assets.emergentagent.com/job_workforce-bridge/artifacts/bgbjeq0i_5262734539052747749.jpg';
 
 export const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
