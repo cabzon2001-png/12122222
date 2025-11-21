@@ -33,15 +33,15 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg overflow-hidden flex items-center justify-center bg-white shadow-sm border border-border">
+            <div className="flex items-center space-x-3">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl overflow-hidden flex items-center justify-center bg-white shadow-md border border-border/80">
                 <img
                   src={LOGO_SRC}
                   alt="ProfiWay logo"
                   className="w-full h-full object-contain"
                 />
               </div>
-              <span className="font-heading font-bold text-2xl text-foreground">ProfiWay</span>
+              <span className="font-heading font-bold text-2xl sm:text-3xl text-foreground">ProfiWay</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               {t.description}
