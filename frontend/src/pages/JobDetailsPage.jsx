@@ -98,6 +98,28 @@ const JobDetailsPage = () => {
               </ul>
             </div>
           )}
+
+        <div className="mt-8 bg-card border border-border rounded-2xl p-5 sm:p-6 space-y-3">
+          <h2 className="font-heading font-semibold text-lg sm:text-xl text-foreground flex items-center gap-2">
+            {jobsPageText.candidateFaqTitle}
+          </h2>
+          <p className="text-xs sm:text-sm text-muted-foreground">
+            {jobsPageText.candidateFaqSubtitle}
+          </p>
+          <ul className="mt-2 space-y-2 text-sm text-muted-foreground">
+            {jobsPageText.candidateFaqItems?.slice(0, 4).map((item, idx) => (
+              <li key={idx} className="flex flex-col">
+                <span className="font-medium text-foreground">
+                  {item.question}
+                </span>
+                <span className="text-xs sm:text-sm text-muted-foreground">
+                  {item.answer}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         </div>
 
         <div className="bg-primary/5 border border-primary/20 rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
