@@ -32,8 +32,12 @@ export const Footer = () => {
           {/* Company Info */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-heading font-bold text-xl">P</span>
+              <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg overflow-hidden flex items-center justify-center bg-white shadow-sm border border-border">
+                <img
+                  src={LOGO_SRC}
+                  alt="ProfiWay logo"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <span className="font-heading font-bold text-2xl text-foreground">ProfiWay</span>
             </div>
