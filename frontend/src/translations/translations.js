@@ -162,6 +162,28 @@ export const translations = {
       candidateFaqTitle: 'Important information for candidates',
       candidateFaqSubtitle:
         'Answers to the most common questions about documents, salary and moving to Europe.',
+      candidateFaqItems: [
+        {
+          question: 'What about documents and visa?',
+          answer:
+            'We only work with legal employment schemes. Our coordinators help with visa, work permit and all required documents together with the employer or licensed partners.',
+        },
+        {
+          question: 'How much money should I take with me at the start?',
+          answer:
+            'Usually we recommend to have money for 3–4 weeks of living (food, transport, personal expenses) until you receive your first salary. Exact amount depends on country and city.',
+        },
+        {
+          question: 'How often is salary paid?',
+          answer:
+            'In most vacancies salary is paid once a month or every 2 weeks. Detailed information is always written in the contract and vacancy description.',
+        },
+        {
+          question: 'Can I bring my family later?',
+          answer:
+            'In many cases yes, but it depends on the country and migration rules. Usually this is possible after several months of legal work and stable income. We always explain options individually.',
+        },
+      ],
       searchLabel: 'Search by keywords',
       searchPlaceholder: 'Job title, country, type of work...',
       countryLabel: 'Country',
