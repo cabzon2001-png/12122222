@@ -66,11 +66,11 @@ export const Navigation = () => {
             onClick={() => navigate('/')}
             className="flex items-center space-x-2 group"
           >
-            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl overflow-hidden flex items-center justify-center bg-white shadow-md border border-border/80">
+            <div className="w-16 h-16 sm:w-18 sm:h-18 rounded-2xl flex items-center justify-center bg-slate-900/95 shadow-lg border border-primary/60 p-2 sm:p-2.5">
               <img
                 src={LOGO_SRC}
                 alt="ProfiWay logo"
-                className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300 drop-shadow-md"
               />
             </div>
             <span className="font-heading font-bold text-2xl sm:text-3xl text-foreground">
