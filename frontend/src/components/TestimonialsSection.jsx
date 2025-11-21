@@ -98,13 +98,6 @@ export const TestimonialsSection = () => {
               align: 'start',
               loop: true,
             }}
-            plugins={[
-              Autoplay({
-                delay: 4500,
-                stopOnMouseEnter: true,
-                stopOnInteraction: true,
-              }),
-            ]}
             className="w-full"
           >
             <CarouselContent>
