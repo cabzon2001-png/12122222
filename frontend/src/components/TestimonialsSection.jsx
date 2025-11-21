@@ -7,14 +7,6 @@ import whatsappTestimonials from '@/data/whatsappTestimonials';
 import { cn } from '@/lib/utils';
 import { Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel';
-import Autoplay from 'embla-carousel-autoplay';
 
 
 export const TestimonialsSection = () => {
