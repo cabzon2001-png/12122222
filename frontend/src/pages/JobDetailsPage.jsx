@@ -30,6 +30,7 @@ const JobDetailsPage = () => {
   }
 
   const text = t.jobDetailsPage;
+  const jobsPageText = t.jobsPage;
 
   return (
     <div className="pt-24 pb-20 bg-background min-h-screen">
