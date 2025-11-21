@@ -357,6 +357,8 @@ const JobsPage = () => {
                 ))}
               </div>
             )}
+          </div>
+        </div>
 
         {/* Candidate FAQ block */}
         <div className="mt-12 max-w-3xl mx-auto">
@@ -384,8 +386,6 @@ const JobsPage = () => {
               </AccordionItem>
             ))}
           </Accordion>
-        </div>
-          </div>
         </div>
       </div>
     </div>
