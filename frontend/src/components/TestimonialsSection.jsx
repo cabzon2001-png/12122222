@@ -85,102 +85,86 @@ export const TestimonialsSection = () => {
           </p>
         </div>
 
-        <div className="relative mb-10 max-w-5xl mx-auto">
-          <Card className="border border-border bg-card/90 shadow-elegant overflow-hidden">
-            <CardHeader className="px-4 sm:px-6 py-3 border-b border-border bg-muted/70 flex items-center justify-between">
-              <div className="flex flex-col items-start">
-                <span className="text-xs uppercase tracking-wide text-muted-foreground">
-                  {language === 'ua' ? 'Живі переписки WhatsApp' : 'Real WhatsApp conversations'}
-                </span>
-                <span className="text-sm text-muted-foreground">
-                  {language === 'ua'
-                    ? 'Відгуки роботодавців та працівників про співпрацю з ProfiWay'
-                    : 'Feedback from employers and workers collaborating with ProfiWay'}
-                </span>
-              </div>
-              <span className="hidden sm:inline-flex items-center gap-1 text-xs text-muted-foreground">
-                <span className="inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-                {language === 'ua' ? 'онлайн' : 'online'}
-              </span>
-            </CardHeader>
-            <CardContent className="p-0">
-              <div className="h-[520px] sm:h-[580px] md:h-[620px] overflow-y-auto bg-[#0b141a] text-white px-3 sm:px-4 py-4 space-y-4">
-                {filtered.map((chat) => {
-                  const rating = getRating(chat);
-                  return (
-                    <div
-                      key={chat.id}
-                      className="bg-[#111b21] rounded-2xl overflow-hidden border border-white/5 shadow-sm"
-                    >
-                      <div className="flex items-center justify-between gap-3 px-4 py-3 border-b border-white/5 bg-[#202c33]">
-                        <div className="flex items-center gap-3">
-                          <Avatar className="w-8 h-8">
-                            <AvatarFallback className="bg-gradient-primary text-primary-foreground text-xs font-semibold">
-                              {chat.avatar}
-                            </AvatarFallback>
-                          </Avatar>
-                          <div className="flex flex-col items-start">
-                            <span className="text-sm font-semibold">
-                              {formatName(chat)}
-                            </span>
-                            <span className="text-[11px] text-gray-300">
-                              WhatsApp ·{' '}
-                              {chat.type === 'employer'
-                                ? language === 'ua'
-                                  ? 'Роботодавець'
-                                  : 'Employer'
-                                : language === 'ua'
-                                ? 'Кандидат'
-                                : 'Candidate'}
-                            </span>
-                          </div>
-                        </div>
-                        <div className="flex flex-col items-end gap-1">
-                          <div className="flex items-center gap-1">
-                            {renderStars(rating)}
-                          </div>
-                          <span className="text-[11px] text-gray-300">
-                            {rating.toFixed(1)} / 5.0
+        <div className="mb-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {filtered.map((chat, index) => {
+              const rating = getRating(chat);
+
+              // Взяти перші 1–2 повідомлення для короткого огляду
+              const firstMessage = chat.messages[0];
+              const secondMessage = chat.messages[1];
+
+              return (
+                <Card
+                  key={chat.id}
+                  className={cn(
+                    'relative h-full flex flex-col border-border bg-card/90 hover:shadow-elegant transition-all duration-300 hover:-translate-y-1',
+                    index < 2 ? 'animate-fade-in-up' : ''
+                  )}
+                >
+                  <CardContent className="p-5 flex flex-col h-full">
+                    <div className="flex items-start justify-between gap-3 mb-3">
+                      <div className="flex items-center gap-3">
+                        <Avatar className="w-9 h-9">
+                          <AvatarFallback className="bg-gradient-primary text-primary-foreground text-sm font-semibold">
+                            {chat.avatar}
+                          </AvatarFallback>
+                        </Avatar>
+                        <div className="flex flex-col items-start">
+                          <span className="text-sm font-semibold text-foreground line-clamp-1">
+                            {formatName(chat)}
+                          </span>
+                          <span className="text-[11px] text-muted-foreground">
+                            {chat.type === 'employer'
+                              ? language === 'ua'
+                                ? 'Роботодавець'
+                                : 'Employer'
+                              : language === 'ua'
+                              ? 'Кандидат'
+                              : 'Candidate'}
                           </span>
                         </div>
                       </div>
-
-                      <div className="px-3 sm:px-4 py-4 space-y-3">
-                        {chat.messages.map((msg, i) => {
-                          const isClient = msg.from === 'client';
-                          return (
-                            <div
-                              key={i}
-                              className={cn(
-                                'flex w-full',
-                                isClient ? 'justify-start' : 'justify-end'
-                              )}
-                            >
-                              <div className="max-w-[85%] flex flex-col">
-                                <div
-                                  className={cn(
-                                    'rounded-2xl px-3 py-2 text-sm shadow-sm break-words',
-                                    isClient
-                                      ? 'bg-[#202c33] text-white rounded-bl-sm'
-                                      : 'bg-[#005c4b] text-white rounded-br-sm'
-                                  )}
-                                >
-                                  {msg.text}
-                                </div>
-                                <span className="mt-1 text-[10px] text-gray-400 self-end">
-                                  {msg.time}
-                                </span>
-                              </div>
-                            </div>
-                          );
-                        })}
-                      </div>
+                      <Quote className="w-4 h-4 text-primary/70" />
                     </div>
-                  );
-                })}
-              </div>
-            </CardContent>
-          </Card>
+
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center gap-1">
+                        {renderStars(rating)}
+                      </div>
+                      <span className="text-[11px] text-muted-foreground">
+                        {rating.toFixed(1)} / 5.0
+                      </span>
+                    </div>
+
+                    <div className="relative flex-1 mb-3">
+                      {firstMessage && (
+                        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-4 mb-2">
+                          {firstMessage.text}
+                        </p>
+                      )}
+                      {secondMessage && (
+                        <p className="text-xs text-muted-foreground/90 leading-relaxed line-clamp-3 italic">
+                          {secondMessage.text}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className="mt-auto flex items-center justify-between pt-2 border-t border-border/60 text-[11px] text-muted-foreground">
+                      <span>
+                        WhatsApp · {index + 1}/{filtered.length}
+                      </span>
+                      <span>
+                        {language === 'ua'
+                          ? 'Повна історія в чаті'
+                          : 'Based on real chat'}
+                      </span>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
         </div>
 
         {/* CTA after testimonials */}
