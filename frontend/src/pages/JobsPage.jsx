@@ -357,6 +357,34 @@ const JobsPage = () => {
                 ))}
               </div>
             )}
+
+        {/* Candidate FAQ block */}
+        <div className="mt-12 max-w-3xl mx-auto">
+          <div className="flex items-center gap-2 mb-4">
+            <HelpCircle className="w-5 h-5 text-primary" />
+            <div>
+              <h2 className="font-heading font-semibold text-lg sm:text-xl text-foreground">
+                {text.candidateFaqTitle}
+              </h2>
+              <p className="text-xs sm:text-sm text-muted-foreground">
+                {text.candidateFaqSubtitle}
+              </p>
+            </div>
+          </div>
+
+          <Accordion type="single" collapsible className="w-full">
+            {text.candidateFaqItems?.map((item, idx) => (
+              <AccordionItem key={idx} value={`item-${idx}`}>
+                <AccordionTrigger className="text-sm sm:text-base">
+                  {item.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground">
+                  {item.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
           </div>
         </div>
       </div>
