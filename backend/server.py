@@ -49,29 +49,53 @@ class StatusCheckCreate(BaseModel):
 async def root():
     return {"message": "Hello World"}
 
+
 @api_router.post("/status", response_model=StatusCheck)
 async def create_status_check(input: StatusCheckCreate):
     status_dict = input.model_dump()
     status_obj = StatusCheck(**status_dict)
-    
+
     # Convert to dict and serialize datetime to ISO string for MongoDB
     doc = status_obj.model_dump()
-    doc['timestamp'] = doc['timestamp'].isoformat()
-    
+    doc["timestamp"] = doc["timestamp"].isoformat()
+
     _ = await db.status_checks.insert_one(doc)
     return status_obj
+
 
 @api_router.get("/status", response_model=List[StatusCheck])
 async def get_status_checks():
     # Exclude MongoDB's _id field from the query results
     status_checks = await db.status_checks.find({}, {"_id": 0}).to_list(1000)
-    
+
     # Convert ISO string timestamps back to datetime objects
     for check in status_checks:
-        if isinstance(check['timestamp'], str):
-            check['timestamp'] = datetime.fromisoformat(check['timestamp'])
-    
+      if isinstance(check["timestamp"], str):
+          check["timestamp"] = datetime.fromisoformat(check["timestamp"])
+
     return status_checks
+
+
+@api_router.post("/forms/employer", response_model=EmployerFormInDB)
+async def submit_employer_form(form: EmployerFormCreate):
+    """Store employer form submission in MongoDB. Email sending can be added later."""
+    form_obj = EmployerFormInDB(**form.model_dump())
+    doc = form_obj.model_dump()
+    doc["created_at"] = doc["created_at"].isoformat()
+
+    await db.employer_forms.insert_one(doc)
+    return form_obj
+
+
+@api_router.post("/forms/candidate", response_model=CandidateFormInDB)
+async def submit_candidate_form(form: CandidateFormCreate):
+    """Store candidate form submission in MongoDB. Email sending can be added later."""
+    form_obj = CandidateFormInDB(**form.model_dump())
+    doc = form_obj.model_dump()
+    doc["created_at"] = doc["created_at"].isoformat()
+
+    await db.candidate_forms.insert_one(doc)
+    return form_obj
 
 # Include the router in the main app
 app.include_router(api_router)
