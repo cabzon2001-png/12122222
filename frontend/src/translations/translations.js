@@ -159,6 +159,9 @@ export const translations = {
       title: 'Jobs for workers in Europe',
       subtitle:
         'Choose country, category and experience level to find current job offers.',
+      candidateFaqTitle: 'Important information for candidates',
+      candidateFaqSubtitle:
+        'Answers to the most common questions about documents, salary and moving to Europe.',
       searchLabel: 'Search by keywords',
       searchPlaceholder: 'Job title, country, type of work...',
       countryLabel: 'Country',
