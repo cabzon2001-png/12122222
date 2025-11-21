@@ -61,12 +61,22 @@ export const Navigation = () => {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-heading font-bold text-xl">P</span>
+          <button
+            type="button"
+            onClick={() => navigate('/')}
+            className="flex items-center space-x-2 group"
+          >
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg overflow-hidden flex items-center justify-center bg-white shadow-sm border border-border">
+              <img
+                src={LOGO_SRC}
+                alt="ProfiWay logo"
+                className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+              />
             </div>
-            <span className="font-heading font-bold text-2xl text-foreground">ProfiWay</span>
-          </div>
+            <span className="font-heading font-bold text-xl sm:text-2xl text-foreground">
+              ProfiWay
+            </span>
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
