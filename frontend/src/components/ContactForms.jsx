@@ -89,18 +89,42 @@ export const ContactForms = () => {
     });
   };
 
-  const handleCandidateSubmit = (e) => {
+  const handleCandidateSubmit = async (e) => {
     e.preventDefault();
     if (!candidateForm.privacy) {
       toast.error(language === 'en' ? 'Please accept the privacy policy' : 'Будь ласка, прийміть політику конфіденційності');
       return;
     }
-    // Store in localStorage for demo
-    const submissions = JSON.parse(localStorage.getItem('candidateSubmissions') || '[]');
-    submissions.push({ ...candidateForm, date: new Date().toISOString() });
-    localStorage.setItem('candidateSubmissions', JSON.stringify(submissions));
-    
-    toast.success(language === 'en' ? 'Application submitted successfully! We will review your profile.' : 'Заявку успішно надіслано! Ми розглянемо ваш профіль.');
+
+    try {
+      const payload = {
+        full_name: candidateForm.name,
+        origin_country: candidateForm.originCountry,
+        whatsapp: candidateForm.whatsapp,
+        email: candidateForm.email,
+        position: candidateForm.position,
+        experience: candidateForm.experience,
+      };
+
+      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/forms/candidate`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        throw new Error('Failed to submit candidate form');
+      }
+
+      toast.success(language === 'en' ? 'Application submitted successfully! We will review your profile.' : 'Заявку успішно надіслано! Ми розглянемо ваш профіль.');
+    } catch (error) {
+      console.error('Candidate form submit error', error);
+      toast.error(language === 'en' ? 'Something went wrong. Please try again later.' : 'Щось пішло не так. Спробуйте пізніше.');
+      return;
+    }
+
     setCandidateForm({
       name: '',
       originCountry: '',
