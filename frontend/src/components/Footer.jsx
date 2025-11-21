@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Globe } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { translations } from '@/translations/translations';
 
-const LOGO_SRC = 'https://customer-assets.emergentagent.com/job_workforce-bridge/artifacts/wz4sqjng_56e2ceb1-2215-4a08-84dd-381a1513ff73.jpg';
+const LOGO_SRC = 'https://customer-assets.emergentagent.com/job_workforce-bridge/artifacts/bgbjeq0i_5262734539052747749.jpg';
 
 export const Footer = () => {
   const { language } = useLanguage();
