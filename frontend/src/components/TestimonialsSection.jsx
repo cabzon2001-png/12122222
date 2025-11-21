@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { translations } from '@/translations/translations';
