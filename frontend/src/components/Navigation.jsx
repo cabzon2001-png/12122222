@@ -66,7 +66,7 @@ export const Navigation = () => {
             onClick={() => navigate('/')}
             className="flex items-center space-x-2 group"
           >
-            <div className="w-20 h-16 sm:w-24 sm:h-18 rounded-xl flex items-center justify-center bg-white shadow-md border border-border/70 px-3 sm:px-4 py-2">
+            <div className="w-24 h-20 sm:w-28 sm:h-20 rounded-2xl flex items-center justify-center bg-white shadow-lg border border-border/70 px-4 sm:px-5 py-2.5">
               <img
                 src={LOGO_SRC}
                 alt="ProfiWay logo"
