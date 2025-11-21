@@ -38,18 +38,44 @@ export const ContactForms = () => {
     privacy: false,
   });
 
-  const handleEmployerSubmit = (e) => {
+  const handleEmployerSubmit = async (e) => {
     e.preventDefault();
     if (!employerForm.privacy) {
       toast.error(language === 'en' ? 'Please accept the privacy policy' : 'Будь ласка, прийміть політику конфіденційності');
       return;
     }
-    // Store in localStorage for demo
-    const submissions = JSON.parse(localStorage.getItem('employerSubmissions') || '[]');
-    submissions.push({ ...employerForm, date: new Date().toISOString() });
-    localStorage.setItem('employerSubmissions', JSON.stringify(submissions));
-    
-    toast.success(language === 'en' ? 'Request submitted successfully! We will contact you soon.' : 'Заявку успішно надіслано! Ми зв\'яжемося з вами найближчим часом.');
+
+    try {
+      const payload = {
+        company_name: employerForm.company,
+        contact_person: employerForm.name,
+        country: employerForm.country,
+        phone: employerForm.phone,
+        email: employerForm.email,
+        worker_type: employerForm.workerType || 'other',
+        quantity: Number(employerForm.quantity) || 1,
+        requirements: employerForm.requirements || '',
+      };
+
+      const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/forms/employer`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!res.ok) {
+        throw new Error('Failed to submit employer form');
+      }
+
+      toast.success(language === 'en' ? 'Request submitted successfully! We will contact you soon.' : 'Заявку успішно надіслано! Ми зв\'яжемося з вами найближчим часом.');
+    } catch (error) {
+      console.error('Employer form submit error', error);
+      toast.error(language === 'en' ? 'Something went wrong. Please try again later.' : 'Щось пішло не так. Спробуйте пізніше.');
+      return;
+    }
+
     setEmployerForm({
       name: '',
       company: '',
